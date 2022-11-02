@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETSUBucHunt.WebAPI", "ETSUBucHunt.WebAPI\ETSUBucHunt.WebAPI.csproj", "{160BA752-74F9-4156-8366-B0AE3F044CA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETSUBucHunt.WebApp", "ETSUBucHunt.WebApp\ETSUBucHunt.WebApp.csproj", "{A81116DC-2C0D-402B-A6A1-341FCFAA3A00}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ETSUBucHunt.Documentation", "ETSUBucHunt.Documentation", "{46285966-A394-4B49-B04C-AD1B52BD687D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{160BA752-74F9-4156-8366-B0AE3F044CA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{160BA752-74F9-4156-8366-B0AE3F044CA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{160BA752-74F9-4156-8366-B0AE3F044CA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{160BA752-74F9-4156-8366-B0AE3F044CA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A81116DC-2C0D-402B-A6A1-341FCFAA3A00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A81116DC-2C0D-402B-A6A1-341FCFAA3A00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A81116DC-2C0D-402B-A6A1-341FCFAA3A00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A81116DC-2C0D-402B-A6A1-341FCFAA3A00}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5D452DC5-DA61-42D2-AA17-57122F9897D8}
+	EndGlobalSection
+EndGlobal
