@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using ETSUBucHunt.WebApp.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<ETSUBucHuntWebAppContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ETSUBucHuntWebAppContext") ?? throw new InvalidOperationException("Connection string 'ETSUBucHuntWebAppContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
