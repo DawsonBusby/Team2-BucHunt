@@ -14,6 +14,6 @@ namespace ETSUBucHunt.WebApp.Data
         {
         }
 
-        public DbSet<ETSUBucHunt.WebApp.Models.Locations> Locations { get; set; } = default!;
+        public DbSet<ETSUBucHunt.WebApp.Models.Tasks> Tasks { get; set; } = default!;
     }
 }

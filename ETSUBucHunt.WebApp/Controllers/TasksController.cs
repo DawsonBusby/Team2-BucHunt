@@ -10,85 +10,85 @@ using ETSUBucHunt.WebApp.Models;
 
 namespace ETSUBucHunt.WebApp.Controllers
 {
-    public class LocationsController : Controller
+    public class TasksController : Controller
     {
         private readonly ETSUBucHuntWebAppContext _context;
 
-        public LocationsController(ETSUBucHuntWebAppContext context)
+        public TasksController(ETSUBucHuntWebAppContext context)
         {
             _context = context;
         }
 
-        // GET: Locations
+        // GET: Tasks
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Locations.ToListAsync());
+              return View(await _context.Tasks.ToListAsync());
         }
 
-        // GET: Locations/Details/5
+        // GET: Tasks/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Locations == null)
+            if (id == null || _context.Tasks == null)
             {
                 return NotFound();
             }
 
-            var locations = await _context.Locations
+            var tasks = await _context.Tasks
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (locations == null)
+            if (tasks == null)
             {
                 return NotFound();
             }
 
-            return View(locations);
+            return View(tasks);
         }
 
-        // GET: Locations/Create
+        // GET: Tasks/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Locations/Create
+        // POST: Tasks/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("question,answer,location,Id")] Locations locations)
+        public async Task<IActionResult> Create([Bind("question,answer,location,Id")] Tasks tasks)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(locations);
+                _context.Add(tasks);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(locations);
+            return View(tasks);
         }
 
-        // GET: Locations/Edit/5
+        // GET: Tasks/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Locations == null)
+            if (id == null || _context.Tasks == null)
             {
                 return NotFound();
             }
 
-            var locations = await _context.Locations.FindAsync(id);
-            if (locations == null)
+            var tasks = await _context.Tasks.FindAsync(id);
+            if (tasks == null)
             {
                 return NotFound();
             }
-            return View(locations);
+            return View(tasks);
         }
 
-        // POST: Locations/Edit/5
+        // POST: Tasks/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("question,answer,location,Id")] Locations locations)
+        public async Task<IActionResult> Edit(int id, [Bind("question,answer,location,Id")] Tasks tasks)
         {
-            if (id != locations.Id)
+            if (id != tasks.Id)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace ETSUBucHunt.WebApp.Controllers
             {
                 try
                 {
-                    _context.Update(locations);
+                    _context.Update(tasks);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!LocationsExists(locations.Id))
+                    if (!TasksExists(tasks.Id))
                     {
                         return NotFound();
                     }
@@ -113,49 +113,49 @@ namespace ETSUBucHunt.WebApp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(locations);
+            return View(tasks);
         }
 
-        // GET: Locations/Delete/5
+        // GET: Tasks/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Locations == null)
+            if (id == null || _context.Tasks == null)
             {
                 return NotFound();
             }
 
-            var locations = await _context.Locations
+            var tasks = await _context.Tasks
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (locations == null)
+            if (tasks == null)
             {
                 return NotFound();
             }
 
-            return View(locations);
+            return View(tasks);
         }
 
-        // POST: Locations/Delete/5
+        // POST: Tasks/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Locations == null)
+            if (_context.Tasks == null)
             {
-                return Problem("Entity set 'ETSUBucHuntWebAppContext.Locations'  is null.");
+                return Problem("Entity set 'ETSUBucHuntWebAppContext.Tasks'  is null.");
             }
-            var locations = await _context.Locations.FindAsync(id);
-            if (locations != null)
+            var tasks = await _context.Tasks.FindAsync(id);
+            if (tasks != null)
             {
-                _context.Locations.Remove(locations);
+                _context.Tasks.Remove(tasks);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool LocationsExists(int id)
+        private bool TasksExists(int id)
         {
-          return _context.Locations.Any(e => e.Id == id);
+          return _context.Tasks.Any(e => e.Id == id);
         }
     }
 }
