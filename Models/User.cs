@@ -22,16 +22,6 @@
             UserName = inputUserName;   
             UserEmailAddress = inputEmailAddress;
             UserPhoneNumber = inputPhoneNumber;
-        }
-
-        //Testing the new class object.
-        /*
-             static void Main(string[] args)
-            {
-                User A = new User("testname", "test@test.edu", "123-456-7890");
-                Console.WriteLine(A.UserName + " " + A.UserEmailAddress + " " + A.UserPhoneNumber);
-
-            }
-        */
+        } 
     }
 }
