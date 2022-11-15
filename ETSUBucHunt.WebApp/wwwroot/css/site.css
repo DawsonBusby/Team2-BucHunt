@@ -54,11 +54,3 @@ div.card.text-center {
     font-weight: bold;
 }
 /*BELOW IMAGE PATH NEEDS TO BE CHANGED TO SOMETHING MORE MODERN INSTEAD OF HARDCODING AN IMAGE PATH*/
-body {
-    height: 100vh;
-    background-image: url("/css/Images/ETSU_Background.jpg");
-    color: white;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}

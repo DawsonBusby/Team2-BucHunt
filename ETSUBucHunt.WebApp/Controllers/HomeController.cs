@@ -18,7 +18,11 @@ namespace ETSUBucHunt.WebApp.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult User()
+        {
+            return View();
+        }
+        public IActionResult Task()
         {
             return View();
         }
