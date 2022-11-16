@@ -14,5 +14,168 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    background-color: #1e3d6c;
+    margin-bottom: 60px;
 }
+
+.main {
+    height:100vh;
+    width: 100%;
+    margin-top:3%;
+    display:flex;
+}
+
+.sidebar {
+    color: white;
+    width: 200px;
+    margin-left: 2%;
+    display: flex;
+    margin-top: 125px;
+    border-left: 1px solid #FFC72C;
+    border-right: 1px solid #FFC72C;
+    border-bottom: 1px solid #FFC72C;
+}
+
+.sidebar-group {
+    color: #041E42;
+    width:100%;
+}
+
+.sidebar-header {
+    font-weight: 700;
+    background-color: #FFC72C;
+    text-align:center;
+}
+
+.panel {
+    display: inline-block;
+    background-color: #34507A;
+    height: 100%;
+    width: 75%;
+    margin-left: 5%;
+    border-left:1px solid black;
+    border-right:1px solid black;
+    border-bottom:1px solid black;
+}
+
+.banner {
+    border:1px solid black;
+    background-image:url(Images/triangles.svg);
+    height:95px;
+    display:flex;
+}
+
+.banner-logo {
+    display: flex;
+    height: 64px;
+    width: 64px;
+    margin-left: 1%;
+    opacity: 50%;
+    position:fixed;
+}
+
+.banner-text {
+    font-weight: 700;
+    font-size: 24px;
+    margin: auto;
+    background-color: #041E42;
+    padding: 10px;
+    color: #FFC72C;
+    border-radius:10%;
+}
+
+.info-box {
+    color: #FFC72C;
+    background-color: #486187;
+    padding: 20px;
+    margin-top: 25px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+    border: 2px solid #FFC72C;
+}
+
+.settings-holder {
+    margin-top: 25px;
+}
+
+.settings-group {
+    border:1px solid purple;
+    width:fit-content;
+}
+
+.setting {
+    width: 300px;
+    color: #FFC72C;
+    padding:2.5px;
+}
+
+.setting-header {
+    background-color: #041E42;
+}
+
+.setting-header-text {
+    font-weight: 700;
+}
+
+.setting-body {
+    background-color: #486187;
+}
+
+.row {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-spacing: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.col {
+    display: table-cell;
+}
+
+.title-icon {
+    margin-right:5px;
+    margin-left:10px;
+}
+
+.user-icon {
+    margin-left:2px;
+    margin-right:3px;
+}
+
+.username:hover {
+    text-decoration:underline;
+    cursor:pointer;
+}
+
+.hunt-counter {
+    font-size:48px;
+    font-weight:700;
+    text-align:center;
+}
+
+.setting-tools {
+    margin-top:10px;
+    text-align:center;
+}
+
+#huntSubtitle {
+    text-align:center;
+}
+
+.manage-button {
+    margin-bottom: 10px;
+    color: #FFC72C;
+    border: 1px solid #FFC72C;
+}
+
+    .manage-button:hover {
+        background-color: #FFC72C;
+        border: 1px solid #FFC72C;
+    }
+    .manage-button:active, .manage-button:focus {
+        outline: 0;
+    }
