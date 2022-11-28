@@ -39,11 +39,26 @@
 			a. shows relevant information of documentation that
 			   has been made throughout the project's lifecycle
 		2. Web API Project
+			a. The backend segment of the project. Creating API methods
+			to access and modify data from the database to display
+			the data onto the web application.
+			b. You will need to establish a connection between the database
+			and this project in order to successfully be able to access and
+			modify the data(there is further documentation on how to do this
+			in the documentation folder).
 		3. Web Application
+			a.The frontend segment of the project. Using the API methods
+			from the web API project, we can make various API calls based on 
+			interactions from the user on the website.
+			b. This is also where we create and maintain our views(front-end code) of each 
+			webpage
 
 ================================================================================== 
 == PROJECT PREREQUISITES ========================================================= 
 ==================================================================================
 	- Working version of Visual Studio
 	- .NET 6 
+	- SQL server Express 2019 (link: https://www.microsoft.com/en-us/download/details.aspx?id=101064)
+	- Git and github
+	- "ASP.NET and web development" module installed in your visual studio
 ================================================================================== 
