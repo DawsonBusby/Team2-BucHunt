@@ -1,0 +1,52 @@
+CREATE TABLE Hunts (huntId INT PRIMARY KEY NOT NULL,
+				    title VARCHAR(255),
+				    theme VARCHAR(255),
+				    invitationText VARCHAR(255),
+				    url VARCHAR(255),
+				    status TINYINT,
+				    dateCreated DATETIME2)
+CREATE TABLE Tasks (taskId INT PRIMARY KEY NOT NULL, 
+				    label VARCHAR(255),
+				    answer VARCHAR(255),
+				    latitude FLOAT,
+				    longitude FLOAT,
+				    displayOrder INT,
+				    qrImageUrl VARCHAR(255), 
+				    qrValue VARCHAR(255), 
+				    huntId INT,
+				    FOREIGN KEY (huntId) REFERENCES Hunts(huntId))
+CREATE TABLE Players (username VARCHAR(255) PRIMARY KEY NOT NULL,
+					  email VARCHAR(255),
+					  phoneNumber VARCHAR(255))
+CREATE TABLE Hunt_Groups (groupId INT PRIMARY KEY NOT NULL,
+						  dateStarted DATETIME2,
+						  huntId INT,
+						  FOREIGN KEY (huntId) REFERENCES Hunts(huntId))
+CREATE TABLE Hunt_Group_Members (Id INT PRIMARY KEY NOT NULL,
+								 username VARCHAR(255),
+								 groupId INT,
+								 FOREIGN KEY (username) REFERENCES Players(username),
+								 FOREIGN KEY (groupId) REFERENCES Hunt_Groups(groupId))
+CREATE TABLE Task_Progress (Id INT PRIMARY KEY NOT NULL,
+							complete BIT DEFAULT 0,
+							timestamp DATETIME2,
+							groupId INT,
+							taskId INT,
+							username VARCHAR(255),
+							FOREIGN KEY (groupId) REFERENCES Hunt_Groups(groupId),
+							FOREIGN KEY (taskId) REFERENCES Tasks(taskId),
+							FOREIGN KEY (username) REFERENCES Players(username))
+CREATE TABLE Codes (accessCode VARCHAR(255) PRIMARY KEY NOT NULL,
+					status TINYINT,
+					username VARCHAR(255),
+					huntId INT,
+					FOREIGN KEY (username) REFERENCES Players(username),
+					FOREIGN KEY (huntId) REFERENCES Hunts(huntId))
+CREATE TABLE Scores (Id INT PRIMARY KEY NOT NULL,
+					 timeTaken TIME,
+					 huntId INT,
+					 username VARCHAR(255),
+					 FOREIGN KEY (huntId) REFERENCES Hunts(huntId),
+					 FOREIGN KEY (username) REFERENCES Players(username))
+CREATE TABLE Admin (username VARCHAR(255) PRIMARY KEY NOT NULL,
+					password VARCHAR(255))

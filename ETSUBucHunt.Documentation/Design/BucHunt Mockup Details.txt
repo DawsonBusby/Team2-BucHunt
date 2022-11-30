@@ -1,0 +1,21 @@
+Page Header: 36 pt font, Gold
+Hunt Header: 36 pt font, Gold
+Task Header: 26 pt font, Gold
+Task Question: 26 pt font, Gold
+Answer Field: Gold border (rounded), white background, black text, 12 pt font.
+Navbar: Bottom alligned, white background, rounded border, Dark blue logos.
+Background: Dark blue
+
+Fonts: Comic sans (not easier to read) / Courrier New ? 
+	Fonts to-do.. (low impact).
+
+goldink : arial-narrow-bold. 
+	    LARGER CLICK BUTTONS: Rolphie12 Fat Expd
+
+Colors:
+- Dark Blue: (background color) #203f6d
+- Gold: #ffc425
+
+etsublue #041E42 (darker blue)
+gold #FFC425 
+

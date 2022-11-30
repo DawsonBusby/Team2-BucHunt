@@ -1,0 +1,81 @@
+=========================================================
+============= DATABASE DOCUMENTATION ====================
+=========================================================
+
+LAST UPDATED: 11/28/2022
+
+The Database creation script is located in 
+BRANCH		<dev>
+< Team2-BucHunt/ETSUBucHunt.Documentation/Database Scripts/Initial Table Creation.sql >
+
+For personal server use, we used Miscrosoft SQL server 2019 Express and/or packages in Visual Studio to simulate a database server for development needs
+Download Link for Microsoft SQL Server 2019 Express< https://www.microsoft.com/en-us/download/details.aspx?id=101064 >
+
+The Database currently has nine tables:
+
+Hunts
+		huntId                    INT PRIMARY KEY NOT NULL
+		title                     VARCHAR(255)
+		theme                     VARCHAR(255)
+		invitationText            VARCHAR(255)
+		url                       VARCHAR(255)
+		status                    TINYINT
+		dateCreated               DATETIME2
+    
+Tasks
+		taskId                    INT PRIMARY KEY NOT NULL
+		label                     VARCHAR(255)
+		answer                    VARCHAR(255)
+		latitude                  FLOAT
+		longitude                 FLOAT
+		displayOrder              INT
+		qrImageUrl                VARCHAR(255)
+		qrValue                   VARCHAR(255)
+		huntId                    INT
+						FOREIGN KEY (huntId) REFERENCES Hunts(huntId))
+    
+Players
+		username                  VARCHAR(255) PRIMARY KEY NOT NULL
+		email                     VARCHAR(255)
+		phoneNumber               VARCHAR(255)
+    
+Hunt_Groups
+		groupId                   INT PRIMARY KEY NOT NULL,
+		dateStarted               DATETIME2
+		huntId                    INT
+						FOREIGN KEY (huntId) REFERENCES Hunts(huntId))
+		
+Hunt_Group_Members
+		Id                       INT PRIMARY KEY NOT NULL
+		username								 VARCHAR(255)
+						FOREIGN KEY (username) REFERENCES Players(username)
+		groupId									 INT
+						FOREIGN KEY (groupId) REFERENCES Hunt_Groups(groupId))
+		
+Task_Progress
+		Id                       INT PRIMARY KEY NOT NULL
+		complete                 BIT DEFAULT 0
+		timestamp                DATETIME2
+		groupId                  INT								
+						FOREIGN KEY (groupId) REFERENCES Hunt_Groups(groupId)
+		taskId                   INT								
+						FOREIGN KEY (taskId) REFERENCES Tasks(taskId)
+		username                 VARCHAR(255)				
+						FOREIGN KEY (username) REFERENCES Players(username)
+Codes
+		accessCode               VARCHAR(255) PRIMARY KEY NOT NULL
+		status                   TINYINT
+		username                 VARCHAR(255)			
+						FOREIGN KEY (username) REFERENCES Players(username)
+		huntId                   INT								
+						FOREIGN KEY (huntId) REFERENCES Hunts(huntId)
+Scores
+		Id                       INT PRIMARY KEY NOT NULL
+		timeTaken                TIME
+		huntId                   INT
+						FOREIGN KEY (huntId) REFERENCES Hunts(huntId)
+		username                 VARCHAR(255)
+						FOREIGN KEY (username) REFERENCES Players(username)
+Admin
+		username                 VARCHAR(255) PRIMARY KEY NOT NULL
+		password                 VARCHAR(255)
